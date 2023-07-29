@@ -107,6 +107,22 @@ img {
 	overflow: hidden;
 }
 
+.current {
+	color: var(--brand-color);
+	position: relative;
+}
+
+.current::after {
+	content: "";
+	background-color: var(--brand-color);
+	height: 4px;
+	width: 100%;
+	border-radius: 2px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
 /*! --------Main Styles------ */
 /* -------Header---------- */
 
@@ -183,7 +199,11 @@ img {
 /*! -------Main------------ */
 
 .solutions {
-	background-color: var(--second-text);
+	background-image: linear-gradient(
+			rgba(46, 47, 66, 0.7),
+			rgba(46, 47, 66, 0.7)
+		),
+		url(../images/main-page/people-office.jpg);
 	padding: 188px 0;
 }
 
@@ -214,6 +234,11 @@ img {
 	margin: 0 auto;
 	border-radius: 4px;
 	min-width: 169px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+	/* ==== trasitions ==== */
+	transition-property: background-color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .solution-btn:hover,
@@ -233,7 +258,21 @@ img {
 .advantages-item {
 	width: calc((100% - 3 * 24px) / 4);
 }
+.advantages-cover {
+	background-color: var(--bg-button);
+	border-radius: 4px;
+	position: relative;
+	height: 112px;
+}
+.advantages-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .advantages-subtile {
+	margin-top: 8px;
 	margin-bottom: 8px;
 }
 
@@ -282,6 +321,14 @@ img {
 .team-item {
 	background-color: #ffff;
 	border-radius: 0px 0px 4px 4px;
+	box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+		0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+		0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+	/* ==== box model ==== */
+	padding-bottom: 32px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .team-content {
 	padding: 32px 0;
@@ -295,6 +342,35 @@ img {
 }
 .team-text {
 	text-align: center;
+}
+
+.team-list-icons {
+}
+.list-icons {
+	display: flex;
+	gap: 24px;
+}
+
+.team-icons-item {
+}
+.icons-item {
+}
+
+.team-icons-link {
+}
+.icons-link {
+	background-color: var(--brand-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+
+	border-radius: 50%;
+}
+
+.social-icon {
+	fill: var(--bg-button);
 }
 
 /* !--------PAGE------------- */
